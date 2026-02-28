@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrating ICT to Transform the Future</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<style>
+:root{
+--primary:#00f5ff;
+--secondary:#00ff94;
+--accent:#ff3b3b;
+--dark-bg:#0a0f1f;
+--light-bg:#f4f9ff;
+--glass:rgba(255,255,255,0.08);
+}
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:var(--dark-bg);
+color:white;
+scroll-behavior:smooth;
+transition:0.4s;
+}
+
+.light-mode{
+background:var(--light-bg);
+color:#111;
+}
+
+h1,h2,h3{
+font-family:'Orbitron',sans-serif;
+}
+
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:999;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:var(--primary);
+}
+
+.toggle-btn{
+cursor:pointer;
+background:var(--primary);
+border:none;
+padding:8px 14px;
+border-radius:20px;
+color:black;
+font-weight:bold;
+}
+
+section{
+padding:100px 10%;
+}
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#001f3f,#003366);
+}
+
+.hero h1{
+font-size:3rem;
+background:linear-gradient(to right,var(--primary),var(--secondary));
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.btn{
+padding:12px 24px;
+border-radius:30px;
+margin:10px;
+cursor:pointer;
+border:none;
+font-weight:bold;
+transition:0.3s;
+background:var(--primary);
+color:black;
+}
+
+.btn:hover{
+box-shadow:0 0 20px var(--primary);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:var(--glass);
+backdrop-filter:blur(15px);
+padding:20px;
+border-radius:15px;
+transition:0.4s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px var(--secondary);
+}
+
+.timeline-item{
+margin:25px 0;
+padding:20px;
+border-left:3px solid var(--primary);
+background:rgba(255,255,255,0.03);
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.timeline-item:hover{
+box-shadow:0 0 20px var(--primary);
+}
+
+.timeline-content{
+display:none;
+margin-top:10px;
+font-family:'Poppins',sans-serif;
+line-height:1.6;
+}
+
+footer{
+background:#000814;
+padding:40px;
+text-align:center;
+}
+
+.chatbot{
+position:fixed;
+bottom:20px;
+right:20px;
+background:var(--primary);
+color:black;
+padding:15px;
+border-radius:50%;
+cursor:pointer;
+}
+
+.chat-window{
+position:fixed;
+bottom:80px;
+right:20px;
+background:white;
+color:black;
+width:300px;
+padding:15px;
+border-radius:15px;
+display:none;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:2rem;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<div><strong>ICT Future</strong></div>
+<div>
+<a href="#history">History</a>
+<a href="#contact">Suggest</a>
+<button class="toggle-btn" onclick="toggleMode()">🌙</button>
+</div>
+</nav>
+
+<section class="hero">
+<h1 data-aos="fade-up">Integrating ICT to Transform the Future</h1>
+<p data-aos="fade-up" data-aos-delay="200">
+Empowering humanity through intelligent systems, connectivity, and innovation.
+</p>
+</section>
+
+<!-- ================= HISTORY SECTION ================= -->
+
+<section id="history">
+<h2 data-aos="fade-down">Evolution & History of ICT</h2>
+
+<div class="timeline-item" onclick="toggleTimeline(this)" data-aos="fade-right">
+<h3>1️⃣ Early Communication & Writing (3500 BCE)</h3>
+<div class="timeline-content">
+The development of writing systems in ancient Mesopotamia enabled humans to record, preserve, and transmit information across generations. This was the first major step toward structured information systems — forming the foundation of ICT.
+</div>
+</div>
+
+<div class="timeline-item" onclick="toggleTimeline(this)" data-aos="fade-left">
+<h3>2️⃣ Telegraph Revolution (1830s)</h3>
+<div class="timeline-content">
+Samuel Morse's telegraph transformed communication by allowing electrical signals to transmit coded messages over long distances. For the first time, information traveled faster than physical transport.
+</div>
+</div>
+
+<div class="timeline-item" onclick="toggleTimeline(this)" data-aos="fade-right">
+<h3>3️⃣ Telephone & Radio (1876–1901)</h3>
+<div class="timeline-content">
+The invention of the telephone enabled real-time voice communication. Radio communication soon followed, introducing wireless information transmission and expanding global connectivity.
+</div>
+</div>
+
+<div class="timeline-item" onclick="toggleTimeline(this)" data-aos="fade-left">
+<h3>4️⃣ Electronic Computers (1940s)</h3>
+<div class="timeline-content">
+Early programmable electronic computers like ENIAC marked the transition from mechanical systems to digital processing. Information could now be processed automatically at high speed.
+</div>
+</div>
+
+<div class="timeline-item" onclick="toggleTimeline(this)" data-aos="fade-right">
+<h3>5️⃣ ARPANET & Internet Birth (1969)</h3>
+<div class="timeline-content">
+ARPANET became the first packet-switched network connecting research institutions. It laid the groundwork for what would eventually become the global Internet.
+</div>
+</div>
+
+<div class="timeline-item" onclick="toggleTimeline(this)" data-aos="fade-left">
+<h3>6️⃣ Email & Networking (1971–1983)</h3>
+<div class="timeline-content">
+Email was introduced, and TCP/IP protocols standardized communication between networks. This enabled the formation of a unified global network system.
+</div>
+</div>
+
+<div class="timeline-item" onclick="toggleTimeline(this)" data-aos="fade-right">
+<h3>7️⃣ World Wide Web (1989–1991)</h3>
+<div class="timeline-content">
+Tim Berners-Lee developed the World Wide Web, allowing users to access and share information via browsers. This made the Internet publicly accessible and revolutionized global information exchange.
+</div>
+</div>
+
+<div class="timeline-item" onclick="toggleTimeline(this)" data-aos="fade-left">
+<h3>8️⃣ Mobile & Cloud Era (2000s)</h3>
+<div class="timeline-content">
+Smartphones and broadband networks enabled constant connectivity. Cloud computing allowed scalable storage and remote computing power, transforming businesses and individuals alike.
+</div>
+</div>
+
+<div class="timeline-item" onclick="toggleTimeline(this)" data-aos="fade-right">
+<h3>9️⃣ Artificial Intelligence Era (2010s–Present)</h3>
+<div class="timeline-content">
+Artificial Intelligence, machine learning, big data, and automation now drive intelligent communication systems — powering smart cities, telemedicine, predictive analytics, and digital governance.
+</div>
+</div>
+
+<!-- VIDEO -->
+<div data-aos="zoom-in" style="margin-top:50px;text-align:center;">
+<h3>📽 Watch: History of ICT Explained</h3>
+<iframe width="100%" height="450"
+src="https://www.youtube.com/embed/jS3QevnkOFk"
+title="History of ICT"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+<h2>Share Your ICT Idea</h2>
+<form onsubmit="submitForm(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Suggestion" required></textarea>
+<button class="btn" type="submit">Submit</button>
+</form>
+<p id="formMessage"></p>
+</section>
+
+<footer>
+<p>© 2026 ICT Future | Transforming Humanity Through Technology</p>
+</footer>
+
+<div class="chatbot" onclick="toggleChat()">🤖</div>
+<div class="chat-window" id="chatWindow">
+<p><strong>ICT Assistant:</strong> How can technology help your community?</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init();
+
+function toggleMode(){
+document.body.classList.toggle("light-mode");
+}
+
+function toggleTimeline(element){
+let content=element.querySelector(".timeline-content");
+content.style.display=content.style.display==="block"?"none":"block";
+}
+
+function submitForm(e){
+e.preventDefault();
+document.getElementById("formMessage").innerText="Thank you! Your idea can change the world 🌍";
+}
+
+function toggleChat(){
+let chat=document.getElementById("chatWindow");
+chat.style.display=chat.style.display==="block"?"none":"block";
+}
+</script>
+
+</body>
+</html>
